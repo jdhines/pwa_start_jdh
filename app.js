@@ -28,10 +28,6 @@ const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 const toneAnalyzer = new ToneAnalyzerV3({
 	version: '2017-09-21',
 	"apikey": "FDg27kGv7_m-Nr9hSSYclKeIF278RmSP2SFM1FoKcBsj",
-	"iam_apikey_description": "Auto-generated for key a10730e7-1c9f-44be-b5d4-ae9fc18ce46b",
-	"iam_apikey_name": "Auto-generated service credentials",
-	"iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
-	"iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/5cb15ea21fd643828508ce3652d8feb2::serviceid:ServiceId-646c6ff0-f878-41e0-ac52-56d8028978c9",
 	url: 'https://gateway.watsonplatform.net/tone-analyzer/api'
 });
 
