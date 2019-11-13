@@ -25,12 +25,15 @@ app.use (function (req, res, next) {
 
 const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
-/*const toneAnalyzer = new ToneAnalyzerV3({
-	version: '',
-	username: '',
-	password: '',
+const toneAnalyzer = new ToneAnalyzerV3({
+	version: '2017-09-21',
+	"apikey": "FDg27kGv7_m-Nr9hSSYclKeIF278RmSP2SFM1FoKcBsj",
+	"iam_apikey_description": "Auto-generated for key a10730e7-1c9f-44be-b5d4-ae9fc18ce46b",
+	"iam_apikey_name": "Auto-generated service credentials",
+	"iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+	"iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/5cb15ea21fd643828508ce3652d8feb2::serviceid:ServiceId-646c6ff0-f878-41e0-ac52-56d8028978c9",
 	url: 'https://gateway.watsonplatform.net/tone-analyzer/api'
-});*/
+});
 
 var text_tone = {
 	name: name,
@@ -40,7 +43,7 @@ var text_tone = {
 var curr_docs = {};
 var Cloudant = require('@cloudant/cloudant');
 
-/*cloudant = Cloudant("https://0ec7cd4c-48d4-42e1-9f09-f63e1622f78e-bluemix:630e8f71457423bf586a43c1fc65165708db339e76a1937a955508a1a3459fa4@0ec7cd4c-48d4-42e1-9f09-f63e1622f78e-bluemix.cloudantnosqldb.appdomain.cloud");
+cloudant = Cloudant("https://34d521d6-bdcb-4b01-802d-765c5ea06a29-bluemix.cloudantnosqldb.appdomain.cloud");
 mydb = cloudant.db.use('test');
  
 mydb.list({ include_docs: true }, function(err, body) {
@@ -48,7 +51,7 @@ mydb.list({ include_docs: true }, function(err, body) {
     	curr_docs = body.rows;
     	console.log(JSON.stringify(curr_docs[0].doc));
     }
-});*/
+});
 var test_res_tone = {};
 app.get('/myform', function(req, res){ 
     myText = req.query.mytext; //mytext is the name of your input box
@@ -59,7 +62,7 @@ app.get('/myform', function(req, res){
     	content_type: 'application/json',
     };
 
-	/*toneAnalyzer.tone(toneParams, function(req, res2){
+	toneAnalyzer.tone(toneParams, function(req, res2){
         test_res_tone = res2;
         console.log(test_res_tone);
         try{
@@ -82,7 +85,7 @@ app.get('/myform', function(req, res){
 		res.render('tones',{text_tone:text_tone});
 		mydb.insert(text_tone);
 		console.log(text_tone);
-	});*/
+	});
 }); 
 
 app.get('/', function(req, res) {
